@@ -1,0 +1,22 @@
+---
+import EducationItem from "./EducationItem.astro"
+
+const EDUCATION = [
+    {
+        date: 'Agosto 2023',
+        title: 'Desarrollo web',
+        description: 'descripcion del curso de desarrollo web',
+        link: '#',
+    }
+]
+---
+<ol class="relative border-s border-gray-200 ml-4">   
+    
+    {EDUCATION.map((education) => (
+    <li class="mb-10 ms-4">
+        <EducationItem {... education} />
+    </li>
+    )) }              
+    
+</ol>
+

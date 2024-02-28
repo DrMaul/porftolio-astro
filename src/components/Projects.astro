@@ -1,0 +1,50 @@
+---
+import ReactJsIcon from '../icons/ReactJs.astro'
+import BootstrapIcon from '../icons/Bootstrap.astro'
+
+const TAGS = {
+    REACT: {
+        name: 'React Js',
+        class: 'bg-dark text-blue-400',
+        icon: ReactJsIcon,
+    },
+    BOOTSTRAP: {
+        name: 'Bootstrap',
+        class: 'bg-purple-100 text-purple-400',
+        icon: BootstrapIcon,
+    }
+}
+
+const PROJECTS = [
+    {
+        title: 'Tienda de Curiosidades de Watto',
+        description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit mus quisque augue hac, maecenas sem mauris magnis dis mattis neque id himenaeos nibh libero, lectus lacus interdum accumsan senectus habitant porttitor egestas volutpat sagittis. Aliquam lectus bibendum egestas ligula non nullam primis laoreet nec inceptos nulla quisque mus, purus placerat torquent suspendisse risus nunc lacus parturient habitasse vivamus rhoncus conubia, himenaeos eu fringilla tempor fermentum dui in euismod congue ultricies ac porttitor.',
+        link: 'https://star-wars-store-aov174wwz-agustins-projects-c2215b95.vercel.app/',
+        github:'https://github.com/DrMaul/StarWars-Store',
+        image: '/projects/svgl.webp',
+        tags: [TAGS.REACT, TAGS.BOOTSTRAP]
+    }
+]
+
+---
+
+{
+    PROJECTS.map(({title, description, tags, image }) => (
+        <article>
+            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+            <p class="text-lg mb-4 text-pretty">{description}</p>    
+            <ul class="flex gap-x-2 flex-row">
+                {tags.map(tag => (
+                    <li>
+                        <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                            <tag.icon class="size-6" />
+                            {tag.name}
+                        </span>
+                        
+                    </li>
+                ))}
+            </ul>
+            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
+        </article>
+    ))
+}
