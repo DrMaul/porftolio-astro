@@ -1,26 +1,24 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import Card from '../components/Card.astro';
 import Badge from '../components/Badge.astro'
 import SocialBadge from '../components/SocialBadge.astro'
 import Education from '../components/Education.astro'
 import Projects from '../components/Projects.astro'
+import Services from '../components/Services.astro'
+import Contact from '../components/Contact.astro'
 import SectionContainer from '../components/SectionContainer.astro'
+import Aboutme from '../components/Aboutme.astro'
 import LinkedInIcon from '../icons/LinkedIn.astro'
 import GithubIcon from '../icons/Github.astro'
 import MailIcon from '../icons/Mail.astro'
+import UserIcon from '../icons/User.astro'
 import EducationIcon from '../icons/StudyBook.astro'
 import ProyectsIcon from '../icons/Code.astro'
 ---
 
 <Layout title="Portfolio de Agustin Martinez - Desarrollador Web Frontend con Astro" description="Programador y Desarrollador Web, contrata al desarrollador freelance para obtener la solución a la altura de tus expectativas">
 	<main class="px-4">
-		<SectionContainer class="py-44 pb-32">
-			<img 
-				src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460_960_720.png"
-				class="rounded-full size-12 mb-2" 
-				alt="portfolio photo"
-			/>
+		<SectionContainer class="h-screen py-32 pb-32">
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hola, soy Agus Martinez 
 				<a href="https://linkedin.com/in/agustinfmartinez" class="flex justify-center items-center" target="_blank" rel="noopener"><Badge>Disponible para trabajar</Badge></a></h1>
 			<h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">Desarrollador web frontend, estudiante de Ingenieria Informática. 
@@ -44,21 +42,45 @@ import ProyectsIcon from '../icons/Code.astro'
 				</nav>
 		</SectionContainer>
 
+		<SectionContainer id="sobre-mi" class="pb-12">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<UserIcon class="size-8"/>
+				Sobre mi
+			</h2>
+			<Aboutme />
+		</SectionContainer>
 
-		<SectionContainer id="educacion">
-			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+
+		<SectionContainer id="educacion" class="flex flex-col items-center">
+			<h3 class="text-2xl font-semibold mb-6 flex gap-x-3">
 				<EducationIcon class="size-8"/>
 				Educación
-			</h2>
+			</h3>
 			<Education />
 		</SectionContainer>
 
-		<SectionContainer id="proyectos">
-			<h2 class="text-2xl font-semibold mb-6 flex gap-x-3 items-center">
+		<SectionContainer id="portfolio">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
 				<ProyectsIcon class="size-8"/>
-				Proyectos
+				Portfolio
 			</h2>
 			<Projects />
+		</SectionContainer>
+
+		<SectionContainer id="servicios">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<ProyectsIcon class="size-8"/>
+				Servicios
+			</h2>
+			<Services />
+		</SectionContainer>
+
+		<SectionContainer id="contacto">
+			<h2 class="text-3xl font-semibold mb-6 flex gap-x-3 items-center">
+				<ProyectsIcon class="size-8"/>
+				Contacto
+			</h2>
+			<Contact />
 		</SectionContainer>
 		
 	</main>

@@ -18,7 +18,7 @@ const TAGS = {
 const PROJECTS = [
     {
         title: 'Tienda de Curiosidades de Watto',
-        description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit mus quisque augue hac, maecenas sem mauris magnis dis mattis neque id himenaeos nibh libero, lectus lacus interdum accumsan senectus habitant porttitor egestas volutpat sagittis. Aliquam lectus bibendum egestas ligula non nullam primis laoreet nec inceptos nulla quisque mus, purus placerat torquent suspendisse risus nunc lacus parturient habitasse vivamus rhoncus conubia, himenaeos eu fringilla tempor fermentum dui in euismod congue ultricies ac porttitor.',
+        description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit mus quisque augue hac, maecenas sem mauris magnis dis mattis neque id himenaeos nibh libero, lectus lacus interdum accumsan senectus habitant porttitor egestas volutpat sagittis.',
         link: 'https://star-wars-store-aov174wwz-agustins-projects-c2215b95.vercel.app/',
         github:'https://github.com/DrMaul/StarWars-Store',
         image: '/projects/svgl.webp',
@@ -26,25 +26,29 @@ const PROJECTS = [
     }
 ]
 
----
 
-{
-    PROJECTS.map(({title, description, tags, image }) => (
-        <article>
-            <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-            <p class="text-lg mb-4 text-pretty">{description}</p>    
-            <ul class="flex gap-x-2 flex-row">
-                {tags.map(tag => (
-                    <li>
-                        <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
-                            <tag.icon class="size-6" />
-                            {tag.name}
-                        </span>
-                        
-                    </li>
-                ))}
-            </ul>
-            <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
-        </article>
-    ))
-}
+---
+<div class="grid grid-cols-2 gap-4 my-4 ">
+    {
+        PROJECTS.map(({title, description, tags, image }) => (
+            <div>
+                <img class="rounded shadow-2xl shadow-white/10 mb-2 hover:scale-110 hover:bg-white/10 transition" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
+                <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+                <ul class="flex gap-x-2 flex-row">
+                    {tags.map(tag => (
+                        <li class="mb-3">
+                            <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
+                                <tag.icon class="size-6" />
+                                {tag.name}
+                            </span>
+                            
+                        </li>
+                    ))}
+                </ul>
+                <p class="text-lg mb-4 text-pretty">{description}</p>
+                 
+            </div>
+        ))
+    }
+</div>
+

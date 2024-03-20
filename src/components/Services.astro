@@ -1,0 +1,20 @@
+---
+import ServiceItem from './ServiceItem.astro'
+import CodeIcon from '../icons/Code.astro'
+
+const SERVICES = [
+    {
+        name: "Diseño Web",
+        description: "Counseled for new companies, and teamed up with capable individuals to make computerized items for both business and purchaser use.",
+        icon:CodeIcon
+    }
+]
+---
+<div class="grid grid-cols-3 gap-4 my-4 ">
+    {SERVICES.map((service) => (
+        
+        <ServiceItem {... service} />
+        
+        )) }   
+
+</div>
