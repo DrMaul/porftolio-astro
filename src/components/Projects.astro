@@ -1,39 +1,88 @@
 ---
 import ReactJsIcon from '../icons/ReactJs.astro'
 import BootstrapIcon from '../icons/Bootstrap.astro'
+import SocialBadge from '../components/SocialBadge.astro'
+import LinkIcon from '../icons/Link.astro'
+import GithubIcon from '../icons/Github.astro'
+import FirebaseIcon from '../icons/Firebase.astro'
+import HTMLIcon from '../icons/HtmlIcon.astro'
+import CSSIcon from '../icons/CSS.astro'
+import SassIcon from '../icons/Sass.astro'
+import JavascriptIcon from '../icons/Javascript.astro'
+
 
 const TAGS = {
     REACT: {
         name: 'React Js',
-        class: 'bg-dark text-blue-400',
+        class: 'bg-slate-900 text-blue-400',
         icon: ReactJsIcon,
     },
     BOOTSTRAP: {
         name: 'Bootstrap',
         class: 'bg-purple-100 text-purple-400',
         icon: BootstrapIcon,
+    },
+    FIREBASE:{
+        name: 'Firebase',
+        class: 'bg-yellow-100 text-yellow-900',
+        icon: FirebaseIcon,
     }
+    ,
+    HTML:{
+        name: 'HTML',
+        class: 'bg-orange-100 text-orange-900',
+        icon: FirebaseIcon,
+    },
+    CSS: {
+        name: "CSS",
+        class: 'bg-sky-100 text-sky-900',
+        icon: CSSIcon
+    },
+    JAVASCRIPT: {
+        name: "JavaScript",
+        class: 'bg-yellow-100 text-yellow-900',
+        icon: JavascriptIcon
+    },
+    SASS: {
+        name: "Sass",
+        class: 'bg-violet-100 text-violet-900',
+        icon: SassIcon
+    }
+    
 }
 
 const PROJECTS = [
     {
         title: 'Tienda de Curiosidades de Watto',
-        description: 'Lorem ipsum dolor sit amet consectetur adipiscing elit mus quisque augue hac, maecenas sem mauris magnis dis mattis neque id himenaeos nibh libero, lectus lacus interdum accumsan senectus habitant porttitor egestas volutpat sagittis.',
+        date:"Febrero 2024",
+        description: 'App e-commerce desarrollada con ReactJs para proyecto final del curso de Desarrollo Frontend React. Conexión con Firebase y Firestore.',
         link: 'https://star-wars-store-aov174wwz-agustins-projects-c2215b95.vercel.app/',
         github:'https://github.com/DrMaul/StarWars-Store',
-        image: '/projects/svgl.webp',
-        tags: [TAGS.REACT, TAGS.BOOTSTRAP]
+        image: '/projects/swstore.webp',
+        tags: [TAGS.REACT, TAGS.BOOTSTRAP, TAGS.FIREBASE]
+    },
+    {
+        title: 'Tienda de Ojitos Turcos: Amuletos de Protección',
+        date:"Diciembre 2023",
+        description: 'App e-commerce desarrollada con JavasSript para proyecto final del curso de Programación JavaScript.',
+        link: 'https://ojitos-turcos-proyect.vercel.app/',
+        github:'https://github.com/DrMaul/OjitosTurcos-Proyect',
+        image: '/projects/ojitosturcos.webp',
+        tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.SASS]
     }
 ]
 
 
 ---
-<div class="grid grid-cols-2 gap-4 my-4 ">
+<div class="grid grid-cols-2 gap-8 my-4 ">
     {
-        PROJECTS.map(({title, description, tags, image }) => (
+        PROJECTS.map(({title,date, description, tags, image, link, github }) => (
             <div>
-                <img class="rounded shadow-2xl shadow-white/10 mb-2 hover:scale-110 hover:bg-white/10 transition" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
                 <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
+                <p class="ms-2 mb-2 text-xs font-light opacity-80">{date}</p> 
+                <a href={link}>
+                    <img class="rounded shadow-2xl shadow-white/10 mb-4 hover:scale-110 hover:bg-white/10 transition" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
+                </a>
                 <ul class="flex gap-x-2 flex-row">
                     {tags.map(tag => (
                         <li class="mb-3">
@@ -46,6 +95,17 @@ const PROJECTS = [
                     ))}
                 </ul>
                 <p class="text-lg mb-4 text-pretty">{description}</p>
+                <nav class="flex gap-4 mt-2">
+				
+                <SocialBadge href={link}>
+                    <LinkIcon class="size-4 md:size-6" />
+                </SocialBadge>
+            
+                <SocialBadge href={github}>
+                    <GithubIcon class="size-4 md:size-6" fill="#fff"/>
+                </SocialBadge>
+    
+            </nav>
                  
             </div>
         ))
