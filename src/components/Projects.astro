@@ -31,7 +31,7 @@ const TAGS = {
     HTML:{
         name: 'HTML',
         class: 'bg-orange-100 text-orange-900',
-        icon: FirebaseIcon,
+        icon: HTMLIcon,
     },
     CSS: {
         name: "CSS",
@@ -69,12 +69,39 @@ const PROJECTS = [
         github:'https://github.com/DrMaul/OjitosTurcos-Proyect',
         image: '/projects/ojitosturcos.webp',
         tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.SASS]
+    },
+    {
+        title: 'Rocanroles Argentinos',
+        date:"Octubre 2023",
+        description: 'Sitio web desarrollado para proyecto final del curso de Desarrollo Web. Maquetación HTML, estilos con Sass y Bootstrap.',
+        link: 'https://drmaul.github.io/PF-MartinezAgustinFelix/',
+        github:'https://github.com/DrMaul/PF-MartinezAgustinFelix',
+        image: '/projects/rocanrolesarg.webp',
+        tags: [TAGS.HTML, TAGS.SASS, TAGS.BOOTSTRAP]
+    },
+    {
+        title: 'App Presupuestos',
+        date:"Diciembre 2021",
+        description: 'App desarrollada con JavaScript, simulador de presupuestos con ingresos y egresos.',
+        link: 'https://drmaul.github.io/appPresupuestos/',
+        github:'https://github.com/DrMaul/appPresupuestos',
+        image: '/projects/appPresupuestos.webp',
+        tags: [TAGS.HTML,TAGS.CSS ,TAGS.JAVASCRIPT]
+    },
+    {
+        title: 'App Reloj Local',
+        date:"Diciembre 2021",
+        description: 'App desarrollada con JavaScript, simulador de reloj que obtiene datos según la hora local.',
+        link: 'https://drmaul.github.io/appRelojLocal',
+        github:'https://github.com/DrMaul/appRelojLocal',
+        image: '/projects/appReloj.webp',
+        tags: [TAGS.HTML,TAGS.CSS ,TAGS.JAVASCRIPT]
     }
 ]
 
 
 ---
-<div class="grid grid-cols-2 gap-8 my-4 ">
+<div class="grid md:grid-cols-2 gap-8 my-4 ">
     {
         PROJECTS.map(({title,date, description, tags, image, link, github }) => (
             <div>
