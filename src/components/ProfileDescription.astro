@@ -12,6 +12,11 @@ import GitIcon from '../icons/Git.astro'
 import FirebaseIcon from '../icons/Firebase.astro'
 import FigmaIcon from '../icons/Figma.astro'
 import PhotoshopIcon from '../icons/Photoshop.astro'
+import ExpressIcon from '../icons/Express.astro'
+import MongoIcon from '../icons/Mongo.astro'
+import DockerIcon from '../icons/Docker.astro'
+import KubernetesIcon from '../icons/Kubernetes.astro'
+import JWTIcon from '../icons/JWT.astro'
 
 
 const SKILLS = [
@@ -40,16 +45,24 @@ const SKILLS = [
         icon: TailwindIcon
     },
     {
+        name: "MongoDB",
+        icon: MongoIcon
+    },
+    {
+        name: "Express",
+        icon: ExpressIcon
+    },
+    {
         name: "ReactJs",
         icon: ReactIcon
     },
     {
-        name: "Astro",
-        icon: AstroIcon
-    },
-    {
         name: "NodeJs",
         icon: NodeIcon
+    },
+    {
+        name: "Astro",
+        icon: AstroIcon
     },
     {
         name: "Git",
@@ -67,13 +80,25 @@ const SKILLS = [
         name: "Photoshop",
         icon: PhotoshopIcon
     },
+    {
+        name: "Docker",
+        icon: DockerIcon
+    },
+    {
+        name: "Kubernetes",
+        icon: KubernetesIcon
+    },
+    {
+        name: "JWT",
+        icon: JWTIcon
+    },
 ]
 
 
 ---
 
 <div {... Astro.props}>
-    <p class="text-white">Soy Agustin Martinez, Desarrollador Web Frontend con React recientemente egresado, y Programador JavaScript con mas de 2 años de experiencia. Actualmente estudiando la carrera de Desarrollador Fullstack con Nodejs y también la carrera de Ingeniero Informático. Además cuento con mas de 10 años de experiencia como Diseñador Gráfico. A continuación comparto mis skills:</p>
+    <p class="text-white">Soy Agustin Martinez, Desarrollador Fullstack MERN, y Programador JavaScript con mas de 2 años de experiencia. Recientemente certificado de la carrera de Desarrollador Fullstack con Nodejs. Actualmente estudiando la carrera de Ingeniería Informática. Además cuento con mas de 10 años de experiencia como Diseñador Gráfico. A continuación comparto mis skills:</p>
 
     <div class="grid grid-cols-5 gap-4 my-4 ">
         {

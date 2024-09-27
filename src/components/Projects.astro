@@ -9,6 +9,9 @@ import HTMLIcon from '../icons/HtmlIcon.astro'
 import CSSIcon from '../icons/CSS.astro'
 import SassIcon from '../icons/Sass.astro'
 import JavascriptIcon from '../icons/Javascript.astro'
+import NodeIcon from '../icons/Node.astro'
+import ExpressIcon from '../icons/Express.astro'
+import MongoIcon from '../icons/Mongo.astro'
 
 
 const TAGS = {
@@ -47,11 +50,35 @@ const TAGS = {
         name: "Sass",
         class: 'bg-violet-100 text-violet-900',
         icon: SassIcon
+    },
+    MONGO: {
+        name: "MongoDB",
+        class: 'bg-green-100 text-green-900',
+        icon: MongoIcon
+    },
+    EXPRESS: {
+        name: "Express",
+        class: 'bg-slate-900 text-gray-400',
+        icon: ExpressIcon
+    },
+    NODE: {
+        name: "NodeJs",
+        class: 'bg-green-100 text-green-900',
+        icon: NodeIcon
     }
     
 }
 
 const PROJECTS = [
+    {
+        title: 'Proyecto Ecommerce Backend',
+        date:"Agosto 2024",
+        description: 'App e-commerce desarrollada para proyecto final del curso de Desarrollo Backend Node. Está construida con Node.js, Express, y MongoDB, incorporando testing con Mocha y Chai, y utilizando Handlebars para el frontend. Implementa autenticación y autorización de usuarios mediante JWT y Passport. La aplicación permite registrar usuarios, mostrar un listado de productos, asignar un carrito y finalizar compras, enviando una notificación de ticket de compra con Nodemailer. También incluye roles de administrador para realizar CRUD de productos, pasarelas de pago, subida de imágenes y documentos con Multer, y un chat con Socket.io. Además, ofrece una API REST estructurada en capas DAO para gestionar los datos de forma eficiente. Despliegue a producción en Railway.',
+        link: 'https://proyecto-final-backend-production-680f.up.railway.app/',
+        github:'https://github.com/DrMaul/Proyecto-Final-Backend',
+        image: '/projects/backendPF.webp',
+        tags: [TAGS.MONGO, TAGS.EXPRESS, TAGS.NODE]
+    },
     {
         title: 'Tienda de Curiosidades de Watto',
         date:"Febrero 2024",
@@ -99,6 +126,7 @@ const PROJECTS = [
     }
 ]
 
+const maxLength = 140
 
 ---
 <div class="grid md:grid-cols-2 gap-8 my-4 ">
@@ -121,7 +149,11 @@ const PROJECTS = [
                         </li>
                     ))}
                 </ul>
-                <p class="text-lg text-white mb-4 text-pretty">{description}</p>
+                <p class="description text-lg text-white mb-4 text-pretty" data-full={description}>{description}</p>
+                {description.length > maxLength && (
+                <a href="#" class="see-more text-blue-500">Ver más</a>
+                )}
+
                 <nav class="flex gap-4 mt-2">
 				
                 <SocialBadge href={link}>
@@ -139,3 +171,33 @@ const PROJECTS = [
     }
 </div>
 
+<script>
+    const descriptionElements = document.querySelectorAll('.description')
+    const maxLength = 140
+
+    descriptionElements.forEach(descriptionElement => {
+        const fullText = descriptionElement.getAttribute('data-full');
+        if(fullText && fullText.length > maxLength){
+            const truncatedText = fullText.substring(0, maxLength) + '...';
+            descriptionElement.textContent = truncatedText;
+            const seeMoreLink = descriptionElement.nextElementSibling
+            if(seeMoreLink){
+                seeMoreLink.addEventListener('click', (e) => {
+                e.preventDefault();
+                if (descriptionElement.textContent === truncatedText) {
+                    descriptionElement.textContent = fullText;
+                    seeMoreLink.textContent = "Ver menos";
+                } else {
+                    descriptionElement.textContent = truncatedText;
+                    seeMoreLink.textContent = "Ver más";
+                }
+                });
+            }
+            
+        }
+
+    })
+
+    
+
+</script>
