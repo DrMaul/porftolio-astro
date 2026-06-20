@@ -1,6 +1,7 @@
 ---
 import Layout from '../layouts/Layout.astro';
 import Education from '../components/Education.astro'
+import Experience from '../components/Experience.astro'
 import Projects from '../components/Projects.astro'
 import Services from '../components/Services.astro'
 import Contact from '../components/Contact.astro'
@@ -9,16 +10,17 @@ import Aboutme from '../components/Aboutme.astro'
 import UserIcon from '../icons/User.astro'
 import EducationIcon from '../icons/StudyBook.astro'
 import PortfolioIcon from '../icons/Briefcase.astro'
+import ExperienceIcon from '../icons/Building.astro'
 import ServicesIcon from '../icons/Code.astro'
 import ContactIcon from '../icons/Message.astro'
 ---
 
-<Layout title="Portfolio de Agustin Martinez - Desarrollador Web Frontend con Astro" description="Programador y Desarrollador Web, contrata al desarrollador freelance para obtener la solución a la altura de tus expectativas">
+<Layout title="Portfolio de Agustin Martinez - Desarrollador Fullstack" description="Desarrollador Fullstack (Python, Django, MERN). Programador JavaScript y diseñador gráfico. Contrata al desarrollador para llevar tu proyecto a producción.">
 	<main class="px-4">
 		<SectionContainer class="h-screen py-32 pb-32">
 			<h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-6 lg:pb-10">Hola, soy Agustin Martinez 
 				<a href="https://linkedin.com/in/agustinfmartinez" class="flex justify-center items-center" target="_blank" rel="noopener"></a></h1>
-			<h2 class="text-xl lg:text-2xl text-white/80 text-wrap max-w-[700px]">Desarrollador Fullstack MERN, programador JavaScript, Diseñador Gráfico y estudiante de Ingenieria Informática. 
+			<h2 class="text-xl lg:text-2xl text-white/80 text-wrap max-w-[700px]">Desarrollador Fullstack (Python · Django · MERN), programador JavaScript, Diseñador Gráfico y estudiante de Ingeniería Informática.
 			</h2>
 
 		</SectionContainer>
@@ -32,11 +34,19 @@ import ContactIcon from '../icons/Message.astro'
 		</SectionContainer>
 
 
-		<SectionContainer id="educacion" class="flex flex-col items-center">
-			<h3 class="text-2xl text-white font-semibold mb-6 flex gap-x-3">
+		<SectionContainer id="experiencia" class="flex flex-col items-start pb-12">
+			<h2 class="text-3xl text-white font-semibold mb-6 flex gap-x-3 items-center">
+				<ExperienceIcon class="size-8"/>
+				Experiencia Laboral
+			</h2>
+			<Experience />
+		</SectionContainer>
+
+		<SectionContainer id="educacion" class="flex flex-col items-start">
+			<h2 class="text-3xl text-white font-semibold mb-6 flex gap-x-3 items-center">
 				<EducationIcon class="size-8"/>
 				Educación
-			</h3>
+			</h2>
 			<Education />
 		</SectionContainer>
 

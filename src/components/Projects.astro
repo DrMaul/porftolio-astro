@@ -12,6 +12,17 @@ import JavascriptIcon from '../icons/Javascript.astro'
 import NodeIcon from '../icons/Node.astro'
 import ExpressIcon from '../icons/Express.astro'
 import MongoIcon from '../icons/Mongo.astro'
+import TypeScriptIcon from '../icons/TypeScript.astro'
+import PythonIcon from '../icons/Python.astro'
+import DjangoIcon from '../icons/Django.astro'
+import TailwindIcon from '../icons/Tailwind.astro'
+import AstroIcon from '../icons/AstroIcon.astro'
+import SupabaseIcon from '../icons/Supabase.astro'
+import ElectronIcon from '../icons/Electron.astro'
+import NextIcon from '../icons/Next.astro'
+import PlaywrightIcon from '../icons/Playwright.astro'
+import SocketIOIcon from '../icons/SocketIO.astro'
+import CloudflareWorkersIcon from '../icons/CloudflareWorkers.astro'
 
 
 const TAGS = {
@@ -65,17 +76,140 @@ const TAGS = {
         name: "NodeJs",
         class: 'bg-green-100 text-green-900',
         icon: NodeIcon
+    },
+    TYPESCRIPT: {
+        name: "TypeScript",
+        class: 'bg-blue-100 text-blue-900',
+        icon: TypeScriptIcon
+    },
+    PYTHON: {
+        name: "Python",
+        class: 'bg-sky-100 text-sky-900',
+        icon: PythonIcon
+    },
+    DJANGO: {
+        name: "Django",
+        class: 'bg-green-100 text-green-900',
+        icon: DjangoIcon
+    },
+    TAILWIND: {
+        name: "Tailwind",
+        class: 'bg-cyan-100 text-cyan-900',
+        icon: TailwindIcon
+    },
+    ASTRO: {
+        name: "Astro",
+        class: 'bg-orange-100 text-orange-900',
+        icon: AstroIcon
+    },
+    SUPABASE: {
+        name: "Supabase",
+        class: 'bg-emerald-100 text-emerald-900',
+        icon: SupabaseIcon
+    },
+    ELECTRON: {
+        name: "Electron",
+        class: 'bg-sky-100 text-sky-900',
+        icon: ElectronIcon
+    },
+    NEXT: {
+        name: "Next.js",
+        class: 'bg-slate-900 text-gray-100',
+        icon: NextIcon
+    },
+    PLAYWRIGHT: {
+        name: "Playwright",
+        class: 'bg-green-100 text-green-900',
+        icon: PlaywrightIcon
+    },
+    SOCKETIO: {
+        name: "Socket.io",
+        class: 'bg-slate-900 text-gray-100',
+        icon: SocketIOIcon
+    },
+    CLOUDFLARE: {
+        name: "Cloudflare Workers",
+        class: 'bg-orange-100 text-orange-900',
+        icon: CloudflareWorkersIcon
     }
-    
 }
 
+// `link` = demo en vivo (opcional; omitir o null si el host venció).
+// `image` = captura en /public/projects (null => placeholder "Captura pendiente").
+// TODO: validar descripciones de proyectos nuevos y agregar capturas .webp.
 const PROJECTS = [
+    {
+        title: 'App LetterRock',
+        date:"Mayo 2026",
+        description: 'Aplicación fullstack, Red social para descubrir, opinar y compartir rock nacional argentino. Frontend: React 18 + Vite + Tailwind CSS + TanStack Query + Zustand. Backend: Express.js (ingesta de catálogo). Base de datos: Supabase (Postgres + Auth). APIs: MusicBrainz (catálogo de artistas), Spotify (catlálogo musical, albums, tracks).',
+        github:'https://github.com/agusfmartinez/app-LetterRock',
+        image: null,
+        tags: [TAGS.REACT, TAGS.EXPRESS, TAGS.SUPABASE, TAGS.TAILWIND]
+    },
+    {
+        title: 'WhatsApp CRM',
+        date:"Mayo 2026",
+        description: 'Aplicación de escritorio para gestión de contactos y campañas de WhatsApp. Desarrollado con Electron, React + Vite, Tailwind, SQLite local, Supabase, WhatsApp API provider.',
+        github:'https://github.com/agusfmartinez/app-WhatsAppCRM',
+        image: null,
+        tags: [TAGS.REACT, TAGS.ELECTRON, TAGS.SUPABASE, TAGS.TAILWIND]
+    },
+    {
+        title: 'Trivia Game',
+        date:"Mayo 2026",
+        description: 'Juego de trivias multiplayer, con salas y jugadores sincronizados a través de código de invitación. Desarrollado como proyecto fullstack con frontend React + Vite y backend Node.js + Express + Socket.IO con API REST. Gestión de preguntas, puntajes y partidas.',
+        github:'https://github.com/agusfmartinez/triviaGame-frontend',
+        image: null,
+        tags: [TAGS.REACT, TAGS.JAVASCRIPT, TAGS.NODE, TAGS.EXPRESS, TAGS.SOCKETIO]
+    },
+    {
+        title: 'Agente Personal WhatsApp',
+        date:"Abril 2026",
+        description: 'Agente conversacional de WhatsApp desarrollado con TypeScript. Procesamiento de mensajes e integración de la API de WhatsApp. Integración de IA para el procesamiento de respuestas utilizando OpenRouter. Deploy en Cloudflare Workers.',
+        github:'https://github.com/agusfmartinez/agente-Whatsapp',
+        image: null,
+        tags: [TAGS.TYPESCRIPT, TAGS.CLOUDFLARE]
+    },
+    {
+        title: 'App Bonos CAI',
+        date:"Octubre 2025",
+        description: 'Aplicación fullstack para ejecutar automatizaciones locales de canje de bonos, con frontend, backend y versión de escritorio. Desarrollada con Electron + React + Vite + Playwright + Node.js + Supabase. La aplicación se divide en tres capas principales: Desktop Proceso principal de Electron que Orquesta la automatización. Backend Servicio remoto (Node + Supabase) utilizado para Autenticación y Whitelist. Frontend Panel de administrador, registro a la aplicación y acceso a la descarga de la misma.',
+        link: 'https://botbonoscai.vercel.app',
+        github:'https://github.com/agusfmartinez/app-bonosCai-desktop',
+        image: null,
+        tags: [TAGS.ELECTRON, TAGS.REACT, TAGS.NODE, TAGS.SUPABASE, TAGS.PLAYWRIGHT]
+    },
+    {
+        title: 'WhatsApp Notes',
+        date:"Agosto 2025",
+        description: 'Bloc de notas con interfaz estilo WhatsApp. Desarrollada con Next.js 15 + TypeScript + TailwindCSS + shadcn/ui. Funciona como PWA (Progressive Web App), lo que permite instalarla en el celular desde el navegador. No requiere usuarios ni registros: todo se guarda en el almacenamiento local (localStorage) del dispositivo. Inspirada en el diseño de WhatsApp para una experiencia intuitiva.',
+        link: 'https://whatsapp-notes.vercel.app',
+        github:'https://github.com/agusfmartinez/whatsapp-notes',
+        image: null,
+        tags: [TAGS.NEXT, TAGS.TYPESCRIPT, TAGS.TAILWIND]
+    },
+    {
+        title: 'App Gym Routine',
+        date:"Julio 2025",
+        description: 'Aplicación para crear y gestionar rutinas de entrenamiento de gimnasio. Desarrollada con Vite y React, integrando Supabase como proveedor de base de datos tipo PostgreeSQL para crear el modelo de datos y almacenar la informacion correspondiente a los ejercicios, rutinas y progreso del usuario.',
+        github:'https://github.com/agusfmartinez/app-gymRoutine',
+        image: null,
+        tags: [TAGS.REACT, TAGS.SUPABASE]
+    },
+    {
+        title: 'MG Consultoría Legal',
+        date:"Abril 2025",
+        description: 'Sitio web institucional para consultora legal. Desarrollado con Astro y Tailwind CSS, optimizado para rendimiento y SEO.',
+        link: 'https://mg-consultoria-legal.vercel.app',
+        github:'https://github.com/agusfmartinez/MG-consultoria-legal',
+        image: null,
+        tags: [TAGS.ASTRO, TAGS.TAILWIND]
+    },
     {
         title: 'Proyecto Ecommerce Backend',
         date:"Agosto 2024",
-        description: 'App e-commerce desarrollada para proyecto final del curso de Desarrollo Backend Node. Está construida con Node.js, Express, y MongoDB, incorporando testing con Mocha y Chai, y utilizando Handlebars para el frontend. Implementa autenticación y autorización de usuarios mediante JWT y Passport. La aplicación permite registrar usuarios, mostrar un listado de productos, asignar un carrito y finalizar compras, enviando una notificación de ticket de compra con Nodemailer. También incluye roles de administrador para realizar CRUD de productos, pasarelas de pago, subida de imágenes y documentos con Multer, y un chat con Socket.io. Además, ofrece una API REST estructurada en capas DAO para gestionar los datos de forma eficiente. Despliegue a producción en Railway.',
-        link: 'https://proyecto-final-backend-production-680f.up.railway.app/',
-        github:'https://github.com/DrMaul/Proyecto-Final-Backend',
+        description: 'App e-commerce desarrollada para proyecto final del curso de Desarrollo Backend Node. Está construida con Node.js, Express, y MongoDB, incorporando testing con Mocha y Chai, y utilizando Handlebars para el frontend. Implementa autenticación y autorización de usuarios mediante JWT y Passport. La aplicación permite registrar usuarios, mostrar un listado de productos, asignar un carrito y finalizar compras, enviando una notificación de ticket de compra con Nodemailer. También incluye roles de administrador para realizar CRUD de productos, pasarelas de pago, subida de imágenes y documentos con Multer, y un chat con Socket.io. Además, ofrece una API REST estructurada en capas DAO para gestionar los datos de forma eficiente.',
+        github:'https://github.com/agusfmartinez/Proyecto-Final-Backend',
         image: '/projects/backendPF.webp',
         tags: [TAGS.MONGO, TAGS.EXPRESS, TAGS.NODE]
     },
@@ -83,17 +217,17 @@ const PROJECTS = [
         title: 'Tienda de Curiosidades de Watto',
         date:"Febrero 2024",
         description: 'App e-commerce desarrollada con ReactJs para proyecto final del curso de Desarrollo Frontend React. Conexión con Firebase y Firestore.',
-        link: 'https://star-wars-store-aov174wwz-agustins-projects-c2215b95.vercel.app/',
-        github:'https://github.com/DrMaul/StarWars-Store',
+        link: 'https://star-wars-store.vercel.app',
+        github:'https://github.com/agusfmartinez/StarWars-Store',
         image: '/projects/swstore.webp',
         tags: [TAGS.REACT, TAGS.BOOTSTRAP, TAGS.FIREBASE]
     },
     {
         title: 'Ojitos Turcos: Amuletos de Protección',
         date:"Diciembre 2023",
-        description: 'App e-commerce desarrollada con JavasSript para proyecto final del curso de Programación JavaScript.',
+        description: 'App e-commerce desarrollada con JavaScript para proyecto final del curso de Programación JavaScript.',
         link: 'https://ojitos-turcos-proyect.vercel.app/',
-        github:'https://github.com/DrMaul/OjitosTurcos-Proyect',
+        github:'https://github.com/agusfmartinez/OjitosTurcos-Proyect',
         image: '/projects/ojitosturcos.webp',
         tags: [TAGS.HTML, TAGS.JAVASCRIPT, TAGS.SASS]
     },
@@ -101,8 +235,8 @@ const PROJECTS = [
         title: 'Rocanroles Argentinos',
         date:"Octubre 2023",
         description: 'Sitio web desarrollado para proyecto final del curso de Desarrollo Web. Maquetación HTML, estilos con Sass y Bootstrap.',
-        link: 'https://drmaul.github.io/PF-MartinezAgustinFelix/',
-        github:'https://github.com/DrMaul/PF-MartinezAgustinFelix',
+        link: 'https://agusfmartinez.github.io/PF-MartinezAgustinFelix/',
+        github:'https://github.com/agusfmartinez/PF-MartinezAgustinFelix',
         image: '/projects/rocanrolesarg.webp',
         tags: [TAGS.HTML, TAGS.SASS, TAGS.BOOTSTRAP]
     },
@@ -110,8 +244,8 @@ const PROJECTS = [
         title: 'App Presupuestos',
         date:"Diciembre 2021",
         description: 'App desarrollada con JavaScript, simulador de presupuestos con ingresos y egresos.',
-        link: 'https://drmaul.github.io/appPresupuestos/',
-        github:'https://github.com/DrMaul/appPresupuestos',
+        link: 'https://agusfmartinez.github.io/appPresupuestos/',
+        github:'https://github.com/agusfmartinez/appPresupuestos',
         image: '/projects/appPresupuestos.webp',
         tags: [TAGS.HTML,TAGS.CSS ,TAGS.JAVASCRIPT]
     },
@@ -119,8 +253,8 @@ const PROJECTS = [
         title: 'App Reloj Local',
         date:"Diciembre 2021",
         description: 'App desarrollada con JavaScript, simulador de reloj que obtiene datos según la hora local.',
-        link: 'https://drmaul.github.io/appRelojLocal',
-        github:'https://github.com/DrMaul/appRelojLocal',
+        link: 'https://agusfmartinez.github.io/appRelojLocal/',
+        github:'https://github.com/agusfmartinez/appRelojLocal',
         image: '/projects/appReloj.webp',
         tags: [TAGS.HTML,TAGS.CSS ,TAGS.JAVASCRIPT]
     }
@@ -128,17 +262,30 @@ const PROJECTS = [
 
 const maxLength = 140
 
+// Slug determinista para anclas (#id). Debe coincidir con el de ProfileDescription.
+const slugify = (s: string) => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '').replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '')
+
 ---
 <div class="grid md:grid-cols-2 gap-8 my-4 ">
     {
         PROJECTS.map(({title,date, description, tags, image, link, github }) => (
-            <div>
+            <div id={slugify(title)} class="scroll-mt-24">
                 <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{title}</h3>
-                <p class="ms-2 mb-2 text-xs font-light opacity-80">{date}</p> 
-                <a href={link}>
-                    <img class="rounded shadow-2xl shadow-white/10 mb-4 hover:scale-110 hover:bg-white/10 transition" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
-                </a>
-                <ul class="flex gap-x-2 flex-row">
+                <p class="ms-2 mb-2 text-xs font-light opacity-80">{date}</p>
+                {image ? (
+                    link ? (
+                        <a href={link} target="_blank" rel="noopener noreferrer">
+                            <img loading="lazy" class="rounded shadow-2xl shadow-white/10 mb-4 hover:scale-110 hover:bg-white/10 transition" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
+                        </a>
+                    ) : (
+                        <img loading="lazy" class="rounded shadow-2xl shadow-white/10 mb-4 hover:scale-110 hover:bg-white/10 transition" src={image} alt={`Captura de pantalla del proyecto ${title}`} />
+                    )
+                ) : (
+                    <div class="rounded shadow-2xl shadow-white/10 mb-4 aspect-video flex items-center justify-center bg-white/5 border border-white/10 text-white/40 text-sm">
+                        Captura pendiente
+                    </div>
+                )}
+                <ul class="flex gap-x-2 flex-row flex-wrap">
                     {tags.map(tag => (
                         <li class="mb-3">
                             <span class={`flex items-center gap-x-2 rounded-full text-xs ${tag.class} py-1 px-2`}>
@@ -154,16 +301,18 @@ const maxLength = 140
                 <a href="#" class="see-more text-blue-500">Ver más</a>
                 )}
 
-                <nav class="flex gap-4 mt-2">
-				
-                <SocialBadge href={link}>
-                    <LinkIcon class="size-4 md:size-6" />
-                </SocialBadge>
-            
+                <nav class="flex gap-4 mt-2 items-center">
+
+                {link && (
+                    <SocialBadge href={link}>
+                        <LinkIcon class="size-4 md:size-6" />
+                    </SocialBadge>
+                )}
+
                 <SocialBadge href={github}>
                     <GithubIcon class="size-4 md:size-6" fill="#fff"/>
                 </SocialBadge>
-    
+
             </nav>
                  
             </div>
